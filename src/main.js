@@ -2,7 +2,7 @@ import Vue from "vue";
 import App from "./App.vue";
 import MyContainer from "@/shared/Container/MyContainer";
 import VueRouter from "vue-router";
-import { ROUTE_LIST } from "./data/ROUTES";
+import { ROUTE_LIST, ADDITIONAL_ROUTES } from "./data/ROUTES";
 // import RouterLink from "vue-router";
 
 const myRoutes = ROUTE_LIST.map((route) => {
@@ -10,9 +10,14 @@ const myRoutes = ROUTE_LIST.map((route) => {
     path: route.href,
     component: route.component,
   };
-});
-
-console.log(myRoutes);
+}).concat(
+  ADDITIONAL_ROUTES.map((route) => {
+    return {
+      path: route.href,
+      component: route.component,
+    };
+  })
+);
 
 Vue.use(VueRouter);
 

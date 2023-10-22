@@ -29,7 +29,10 @@ export default {
 
 <style lang="sass" scoped>
 .list
-  display: flex
-  align-items: center
-  gap: 25px
+  display: grid
+  grid-template-columns: repeat(auto-fill, minmax(100px, 150px))
+  // display: flex
+  // align-items: center
+  // gap: 25px
+  background: rgba(0, 0, 0, .7)
 </style>

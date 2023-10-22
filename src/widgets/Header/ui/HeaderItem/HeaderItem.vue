@@ -1,5 +1,7 @@
 <template>
-  <router-link v-if="href !== exception" :to="href">{{ label }}</router-link>
+  <router-link class="link" v-if="href !== exception" :to="href">{{
+    label
+  }}</router-link>
 </template>
 <!-- <script setup>
 import NOT_FOUND_ROUTE from "@/data/ROUTES";
@@ -21,4 +23,16 @@ export default {
 };
 </script>
 
-<style lang="sass" scoped></style>
+<style lang="sass" scoped>
+.link
+  padding: 5px
+  color: #fff
+  text-decoration: none
+  border: 1px solid #fff
+  transition: all ease .5s
+  &:hover
+    background: #2e557c
+.router-link-exact-active
+  background: #2e557c
+  pointer-events: none
+</style>

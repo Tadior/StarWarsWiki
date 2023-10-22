@@ -3,7 +3,7 @@
     <my-header />
     <main class="main">
       <my-container class="container--dark">
-        <router-view />
+        <router-view v-bind:key="$route.path" />
       </my-container>
     </main>
     <my-footer />
@@ -40,7 +40,7 @@ export default {
   display: grid
   grid-template-rows: auto 1fr auto
   background: url("../public/star-wars-bg.jpg") no-repeat 65% top fixed
-  height: 100%
+  min-height: 100vh
 
 .container--dark
   background: rgba(0, 0, 0, .7)
